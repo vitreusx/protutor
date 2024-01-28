@@ -1,0 +1,10 @@
+\usepackage{stackengine}
+\usepackage{fontspec}
+\usepackage{setspace}
+
+\newfontfamily\ipafont{Noto Serif}
+\setstretch{0.5}
+\newcommand*{\ipa}[2]{\stackon%
+    {\vphantom{|} #1}%
+    {\vphantom{|}\ipafont\tiny #2}{ }%
+}
