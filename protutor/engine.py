@@ -24,7 +24,7 @@ class Engine:
     def __init__(self, lang: str, cache_dir="~/.cache/protutor"):
         self._lang = lang
 
-        self._cache_path = Path(cache_dir) / f"words_{lang}.pkl"
+        self._cache_path = Path(cache_dir).expanduser() / f"words_{lang}.pkl"
         if self._cache_path.exists():
             with open(self._cache_path, "rb") as f:
                 self._cache = pickle.load(f)
