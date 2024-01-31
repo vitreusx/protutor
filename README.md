@@ -2,9 +2,11 @@
 
 Protutor is a simple Python script to convert your favorite book in .tex format to a form, where IPA pronunciations of the words/clauses are displayed above the text. Here's how it looks:
 
-| Original                                                   | With IPA                                                           |
-|------------------------------------------------------------|--------------------------------------------------------------------|
-| [<img src="examples/du_cote.jpg" />](examples/du_cote.pdf) | [<img src="examples/du_cote_pro.jpg" />](examples/du_cote_pro.pdf) |
+| Original                                                           |
+|:------------------------------------------------------------------:|
+| [<img src="examples/du_cote.jpg" />](examples/du_cote.pdf)         |
+| **With IPA**                                                       |
+| [<img src="examples/du_cote_pro.jpg" />](examples/du_cote_pro.pdf) |
 
 ## Requirements
 

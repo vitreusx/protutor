@@ -112,17 +112,23 @@ class Engine:
         res = []
         for idx, par in enumerate(paragraphs):
             if idx > 0:
-                value = [("\n", None)]
-                res.append(unit(value))
+                parts = [("\n", None)]
+                res.append(unit(parts))
 
-            clauses = [*re.finditer("[^\w ’]+", par)]
+            clauses = [*re.finditer("[\w\-’]+[\.,;!\?\:]?", par)]
             cur = 0
             for idx, match in enumerate(clauses):
                 beg, end = match.span()
-                if idx == len(clauses) - 1:
-                    end = len(par)
-                res.append(self.annotate_clause(par[cur:end]))
+
+                parts = [(par[cur:beg], None)]
+                res.append(unit(parts))
+
+                res.append(self.annotate_clause(par[beg:end]))
+
                 cur = end
+
+            parts = [(par[cur:], None)]
+            res.append(unit(parts))
 
         res = await asyncio.gather(*res)
         res = [x for y in res for x in y]
