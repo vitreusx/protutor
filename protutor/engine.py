@@ -115,7 +115,7 @@ class Engine:
                 parts = [("\n", None)]
                 res.append(unit(parts))
 
-            clauses = [*re.finditer("[\w\-’]+[\.,;!\?\:]?", par)]
+            clauses = [*re.finditer("[\w\-’][\w\-\ ’]*[\.,;!\?\:]?", par)]
             cur = 0
             for idx, match in enumerate(clauses):
                 beg, end = match.span()
